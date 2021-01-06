@@ -14,5 +14,6 @@ module.exports = merge(baseConfig, {
     compress: true,
     port: 10086,
     open: true,
+    overlay: true
   },
 });
