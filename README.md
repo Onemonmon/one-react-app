@@ -14,6 +14,32 @@
    -src
    -index.js
 
-5. 新建 webpack.config.js
+5. 新建 webpack.base.config.js webpack.dev.config.js webpack.prod.config.js
 
-6. package.json 新增命令 dev: webpack --config webpack.config.js
+6. package.json 新增命令 dev: webpack --config webpack.dev.config.js
+
+7. yarn add webpack-merge -D
+
+8. yarn add html-webpack-plugin -D
+
+9. yarn add webpack-dev-server -D
+
+   修改 package.json 的启动命令为 webpack-dev-server --config webpack.dev.config.js
+
+   异常：webpack-cli 4.0 无法使用 webpack-dev-server，改为 webpack serve --config webpack.dev.config.js
+
+10. yarn add @babel/core @babel/preset-env @babel/preset-react babel-loader -D
+
+11. 新建 .babelrc 文件
+
+12. yarn add corejs regenerator-runtime -D
+
+    babel 7.4.0 起已废弃 babel/polyfill，用 corejs regenerator-runtime 代替
+
+    question：为什么编译后的 bundle.js 里会出现箭头函数？
+
+13. yarn add less less-loader css-loader style-loader -D
+
+14. webpack.base.config.js 新增 resolve: {extensions: ["js", "jsx"], alias: { "@": xxx }}
+
+15. yarn add url-loader file-loader -D
