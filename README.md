@@ -40,6 +40,14 @@
 
 13. yarn add less less-loader css-loader style-loader -D
 
-14. webpack.base.config.js 新增 resolve: {extensions: ["js", "jsx"], alias: { "@": xxx }}
+14. webpack.base.config.js 新增 resolve: {extensions: ["js", "jsx"], alias: { "@": "../src" }}
 
 15. yarn add url-loader file-loader -D
+
+16. yarn add typescript ts-loader @types/react @types/react-dom -D
+
+    tsc --init
+
+    tsconfig.json 中去掉注释 "jsx": "preserve", "allowSyntheticDefaultImports": true, moduleResolution": "node" ，修改 "module": "es6"
+
+    新建 typings 文件夹，新增 images.d.ts, css.d.ts 文件，在 compilerOptions 下新增"include": ["./typing/xx.d.ts"]
