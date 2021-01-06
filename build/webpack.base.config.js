@@ -28,8 +28,8 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 1024,
-            outputPath: "../dist/images/",
-            name: "[name]_[hash:8].[ext]",
+            outputPath: 'images/',
+            name: "[name].[hash].[ext]",
           },
         },
       },
