@@ -3,7 +3,6 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const WebpackBar = require("webpackbar");
 
 module.exports = merge(baseConfig, {
   plugins: [
@@ -11,6 +10,5 @@ module.exports = merge(baseConfig, {
       template: path.resolve(__dirname, "../public/index.html"),
     }),
     new CleanWebpackPlugin(),
-    new WebpackBar()
   ],
 });

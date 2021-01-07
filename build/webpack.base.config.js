@@ -1,4 +1,6 @@
 const path = require("path");
+const WebpackBar = require("webpackbar");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 /**
  * 导入webpack配置
@@ -23,8 +25,21 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/,
-        exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: [
+          {
+            // 抽离css文件
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../",
+            },
+          },
+          "css-loader",
+          {
+            // 按需引入antd样式
+            loader: "less-loader",
+            options: { lessOptions: { javascriptEnabled: true } },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -33,7 +48,7 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 1024,
-            outputPath: 'images/',
+            outputPath: "images/",
             name: "[name].[hash].[ext]",
           },
         },
@@ -44,6 +59,13 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
       "@": path.resolve(__dirname, "../src"),
+      "@layout": path.resolve(__dirname, "../layout"),
     },
   },
+  plugins: [
+    new WebpackBar(),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[hash].css",
+    }),
+  ],
 };
