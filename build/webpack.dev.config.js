@@ -9,9 +9,9 @@ module.exports = merge(baseConfig, {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
-    new BundleAnalyzerPlugin({
-      port: 10087,
-    }),
+    // new BundleAnalyzerPlugin({
+    //   port: 10087,
+    // }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
@@ -19,5 +19,6 @@ module.exports = merge(baseConfig, {
     port: 10086,
     open: true,
     overlay: true,
+    stats: "errors-only",
   },
 });

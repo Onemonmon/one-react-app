@@ -8,6 +8,7 @@
 - webpack 新增 babel-plugin-import 插件，对样式进行按需引入
 - webpack 新增 mini-css-extract-plugin 插件，抽离样式文件
 - 项目新增 antd 组件库
+- webpack 新增 friendly-errors-webpack-plugin 插件
 
 `2021-01-06`
 

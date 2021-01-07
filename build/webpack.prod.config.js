@@ -11,4 +11,5 @@ module.exports = merge(baseConfig, {
     }),
     new CleanWebpackPlugin(),
   ],
+  stats: "errors-only",
 });

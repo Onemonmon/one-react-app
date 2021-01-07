@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BasicLayout from "@layout/BasicLayout";
+import BasicLayout from "@/layouts/BasicLayout";
 import "@/App.less";
 
 function App() {

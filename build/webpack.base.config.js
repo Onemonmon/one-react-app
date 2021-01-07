@@ -1,6 +1,7 @@
 const path = require("path");
 const WebpackBar = require("webpackbar");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 
 /**
  * 导入webpack配置
@@ -54,18 +55,22 @@ module.exports = {
         },
       },
     ],
+    noParse: /jquery|lodash/,
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
       "@": path.resolve(__dirname, "../src"),
-      "@layout": path.resolve(__dirname, "../layout"),
+      "@config": path.resolve(__dirname, "../config"),
     },
   },
   plugins: [
     new WebpackBar(),
     new MiniCssExtractPlugin({
       filename: "css/[name].[hash].css",
+    }),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: true,
     }),
   ],
 };
