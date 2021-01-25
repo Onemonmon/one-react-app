@@ -56,10 +56,22 @@
 
 **如何优化打包性能？**
 
-主要从 3 个方面入手：速度、大小、按需
+主要从 3 个方面入手：速度、体积、按需
+
+### 速度
 
 1. 优化 Loader 的文件搜索范围，如指定 babel-loader 的查找路径 include 和不查找路径 exclude，将编译后的文件缓存 cacheDirectory: true
 
 2. HappyPack 多线程打包，性能依据电脑内核而定
 
 3. DllPlugin 提前打包指定类库，当类库版本更新时才需要重新打包
+
+4. UglifyJS 代码并行压缩：webpack4 中 mode=production 时默认开启
+
+5. resolve.extensions resolve.alias module.noParse
+
+### 体积
+
+1. 开启 scope hosting，它会分析模块间的依赖关系，尽可能合并打包后的模块，optimization: { concatenateModules: true }
+
+2. tree shaking （webpack4 默认开启），去除文件未使用的代码（dead-code）

@@ -76,11 +76,12 @@ module.exports = {
         },
       },
     ],
-    noParse: /jquery|lodash/,
+    noParse: /jquery|lodash/, // 没有依赖的类库，不进行扫描
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".tsx", ".ts", ".js"], // 常用的排前面
     alias: {
+      // 起别名能更快的找到文件
       "@": path.resolve(__dirname, "../src"),
       "@config": path.resolve(__dirname, "../config"),
     },
@@ -100,4 +101,7 @@ module.exports = {
     //   threads: 2,
     // }),
   ],
+  optimization: {
+    concatenateModules: true,
+  },
 };
