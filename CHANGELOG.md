@@ -1,5 +1,12 @@
 # 更新日志
 
+## 1.0.2
+
+`2021-01-25`
+
+- webpack 新增 happypack 插件
+- webpack.config.base.js 新增 babel-loader 的缓存选项
+
 ## 1.0.1
 
 `2021-01-07`
