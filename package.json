@@ -1,6 +1,6 @@
 {
   "name": "one-react-app",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:Onemonmon/one-react-app.git",
   "author": "xyw <xuyouwan@longshine.com>",
@@ -9,6 +9,9 @@
     "dev": "webpack serve --config build/webpack.dev.config.js",
     "build": "webpack --config build/webpack.prod.config.js",
     "watch": "webpack --watch --config build/webpack.prod.config.js"
+  },
+  "bin": {
+    "one-cli": "bin.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -24,6 +27,7 @@
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "happypack": "^5.0.1",
     "html-webpack-plugin": "^4.5.1",
     "less": "^4.0.0",
     "less-loader": "^7.2.1",
@@ -42,7 +46,6 @@
   },
   "dependencies": {
     "antd": "^4.10.0",
-    "happypack": "^5.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"

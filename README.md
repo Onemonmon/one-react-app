@@ -75,3 +75,5 @@
 1. 开启 scope hosting，它会分析模块间的依赖关系，尽可能合并打包后的模块，optimization: { concatenateModules: true }
 
 2. tree shaking （webpack4 默认开启），去除文件未使用的代码（dead-code）
+
+**如何在 npm 发布**
