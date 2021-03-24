@@ -27,4 +27,5 @@ module.exports = function (name) {
     fs.writeFileSync(path.resolve(dirPath, name), template);
     console.log(`${chalk.green(name)} is created successfully`);
   });
+  console.log(chalk.green(`starting to install dependences ...`));
 };

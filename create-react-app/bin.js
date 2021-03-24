@@ -17,7 +17,6 @@ const program = new commander.Command(packageInfo.name)
     }
   })
   .on("option:dir", function (res) {
-    console.log(process.cwd(), res);
     const dirPath = path.resolve(process.cwd(), res);
     !fs.existsSync(dirPath) && fs.mkdirSync(dirPath);
   })
