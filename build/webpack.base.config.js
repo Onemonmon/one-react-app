@@ -28,7 +28,6 @@ module.exports = {
       // },
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader",
@@ -42,8 +41,8 @@ module.exports = {
       },
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
         use: ["ts-loader"],
+        exclude: /node_modules/,
       },
       {
         test: /\.(css|less)$/,
@@ -65,7 +64,6 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        exclude: /node_modules/,
         use: {
           loader: "url-loader",
           options: {
@@ -74,6 +72,7 @@ module.exports = {
             name: "[name].[hash].[ext]",
           },
         },
+        exclude: /node_modules/,
       },
     ],
     noParse: /jquery|lodash/, // 没有依赖的类库，不进行扫描
